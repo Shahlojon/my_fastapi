@@ -1,11 +1,12 @@
-curl -X POST http://localhost:5000/predict \
+curl -X POST http://localhost:8000/predict \
 -H "Content-Type: application/json" \
--d '{"input": [0.5, 1.2, 3.4, 5.6, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]}'
+-d '{"features": [[0.5, 1.2, 3.4, 5.6, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]]}'
 
 
 docker build -t my_fastapi_onnx_app .
 
 docker run -p 8000:8000 my_fastapi_onnx_app
+
 
 Примерный код для теста
 
